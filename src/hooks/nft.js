@@ -28,7 +28,7 @@ export class NFT extends Component {
         const web3 = new Web3(window.ethereum);
         await window.ethereum.enable();
         const contract_abi=require('../abiContrat.json');
-        const contract_address="0x2E6e71D747e575D8be7F1a464713f27618Bc377b";
+        const contract_address="0xCA71d3FCA5D65Ce3C4aEaa588Dbe3118657dF73a";
         const NameContract =new web3.eth.Contract(contract_abi, contract_address);
         const user=await web3.eth.getAccounts();
         await NameContract.methods.mint().send({from: user[0]},function(err, res){

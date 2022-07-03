@@ -1,0 +1,10 @@
+{
+  "tabWidth": 2,
+  "useTabs": false,
+  // enable globally (here: format on save)
+"editor.formatOnSave": true,
+// enable per-language (
+"[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
+}
