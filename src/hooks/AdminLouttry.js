@@ -16,7 +16,7 @@ export class Admin extends Component {
     const web3 = new Web3(window.ethereum);
     await window.ethereum.enable();
     const contract_abi=require('./../generateL.json');
-    const contract_address="0x57204fcE36084A2257a72eD71beBC8D9d752c8e7";
+    const contract_address="0xBDc3FC5Cfa71E7D45637E719D5660Fbcfd2D2F86";
     const NameContract =new web3.eth.Contract(contract_abi, contract_address);
     const user=await web3.eth.getAccounts();
     const numver=await NameContract.methods.lotteryState().call(function(err,res){
@@ -30,7 +30,7 @@ export class Admin extends Component {
     const web3 = new Web3(window.ethereum);
     await window.ethereum.enable();
     const contract_abi=require('./../generateL.json');
-    const contract_address="0x57204fcE36084A2257a72eD71beBC8D9d752c8e7";
+    const contract_address="0xBDc3FC5Cfa71E7D45637E719D5660Fbcfd2D2F86";
     const NameContract =new web3.eth.Contract(contract_abi, contract_address);
     const user=await web3.eth.getAccounts();
     const numver=await NameContract.methods.startNewLouttry().send({from: user[0]},function(err, res){
@@ -40,7 +40,7 @@ export class Admin extends Component {
     const web3 = new Web3(window.ethereum);
     await window.ethereum.enable();
     const contract_abi=require('./../generateL.json');
-    const contract_address="0x57204fcE36084A2257a72eD71beBC8D9d752c8e7";
+    const contract_address="0xBDc3FC5Cfa71E7D45637E719D5660Fbcfd2D2F86";
     const NameContract =new web3.eth.Contract(contract_abi, contract_address);
     const user=await web3.eth.getAccounts();
     const numver=await NameContract.methods.requestRandomWords(e).send({from: user[0]},function(err, res){
@@ -50,7 +50,7 @@ export class Admin extends Component {
     const web3 = new Web3(window.ethereum);
     await window.ethereum.enable();
     const contract_abi=require('./../generateL.json');
-    const contract_address="0x57204fcE36084A2257a72eD71beBC8D9d752c8e7";
+    const contract_address="0xBDc3FC5Cfa71E7D45637E719D5660Fbcfd2D2F86";
     const NameContract =new web3.eth.Contract(contract_abi, contract_address);
     const user=await web3.eth.getAccounts();
     const numver=await NameContract.methods.generateRandomWinners().send({from: user[0]},function(err, res){
@@ -61,7 +61,7 @@ export class Admin extends Component {
     const web3 = new Web3(window.ethereum);
     await window.ethereum.enable();
     const contract_abi=require('./../generateL.json');
-    const contract_address="0x57204fcE36084A2257a72eD71beBC8D9d752c8e7";
+    const contract_address="0xBDc3FC5Cfa71E7D45637E719D5660Fbcfd2D2F86";
     const NameContract =new web3.eth.Contract(contract_abi, contract_address);
     const user=await web3.eth.getAccounts();
     const numver=await NameContract.methods.getWinnerTicket().call({from: user[0]},function(err, res){

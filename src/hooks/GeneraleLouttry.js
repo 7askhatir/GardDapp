@@ -1,6 +1,102 @@
-import {Component} from 'react';
-import {Card ,ListGroup ,ListGroupItem ,Row ,Column ,Col,Container,Button} from "react-bootstrap";
+import {Component,useState} from 'react';
+import {Card ,Modal,ListGroup ,ListGroupItem ,Row ,Column ,Col,Container,Button} from "react-bootstrap";
 import Web3 from 'web3';
+export let data={token:"",nft:0}
+let array = [];
+export  function Example() {
+    const [smShow, setSmShow] = useState(false);
+    const [lgShow, setLgShow] = useState(false);
+    const selectNft=(e)=>{
+       
+      data.nft=e;
+      setLgShow(false);
+      
+      
+    }
+  const test = async () =>{
+    const web3 = new Web3(window.ethereum);
+    await window.ethereum.enable();
+    const contract_abi=require('./../abiContrat.json');
+    const contract_address="0xCA71d3FCA5D65Ce3C4aEaa588Dbe3118657dF73a";
+    const NameContract =new web3.eth.Contract(contract_abi, contract_address);
+    const user=await web3.eth.getAccounts();
+    const numver=await NameContract.methods.walletOfOwner(user[0]).call(function(res,err){
+    });
+   
+    let nftArray = [];
+    for(let i=0;i<numver.length;i++){
+      var nftPro= await NameContract.methods.getNftById(numver[i]).call();
+      const uri=await NameContract.methods.tokenURI(nftPro.id).call();
+      var o = {
+        'id':nftPro.id,
+        'Type':nftPro.Type,
+        'level':nftPro.level,
+        'hearts':nftPro.hearts,
+        'points':nftPro.points,
+        'Shield':nftPro.Shield,
+        'uri':uri
+        
+      };
+      nftArray.push(o);
+
+    }
+    array= nftArray;
+  }
+  
+  test();
+  var divStyles = {
+    boxShadow: '1px 2px 9px green',
+    margin: '1em',
+    cursor: 'pointer',
+    padding: '1em',
+
+  };
+  var simpleDtyle={
+    margin: '1em',
+    cursor: 'pointer',
+    padding: '1em',
+  }
+    return (
+      <>
+        <Button onClick={() => setLgShow(true)}>Select your Nft</Button>
+
+        <Modal
+          size="lg"
+          show={lgShow}
+          onHide={() => setLgShow(false)}
+          aria-labelledby="example-modal-sizes-title-lg"
+        >
+          <Modal.Header closeButton>
+            <Modal.Title id="example-modal-sizes-title-lg">
+              Select Your NFT
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+          <Row>
+          {array.map((e, index) =>
+            <Col style={data.nft==array[index].id?divStyles:simpleDtyle}>
+              <Card style={{ width: '18rem' }}>
+            <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/2/24/NFT_Icon.png" />
+            <Card.Body>
+              <Card.Title> {array[index].id}</Card.Title> 
+              <Card.Text>
+                Number Of hearts : {array[index].hearts}
+              </Card.Text>
+              <Button variant="primary" onClick={() => {
+               selectNft(array[index].id);
+            }}>Select this NFT</Button>
+            </Card.Body>
+          </Card>
+            </Col>
+            )}
+          </Row>
+            
+          
+          </Modal.Body>
+        </Modal>
+      </>
+    );
+  }
 export class GenarateLouttry extends Component {
     constructor(props) {
         super(props);
@@ -13,7 +109,7 @@ export class GenarateLouttry extends Component {
         const web3 = new Web3(window.ethereum);
         await window.ethereum.enable();
         const contract_abi=require('./../generateL.json');
-        const contract_address="0x57204fcE36084A2257a72eD71beBC8D9d752c8e7";
+        const contract_address="0xBDc3FC5Cfa71E7D45637E719D5660Fbcfd2D2F86";
         const NameContract =new web3.eth.Contract(contract_abi, contract_address);
         const user=await web3.eth.getAccounts();
         const numver=await NameContract.methods.checkUseralreadyParticipating().call({from: user[0]},function(err, res){
@@ -21,14 +117,16 @@ export class GenarateLouttry extends Component {
         this.setState({isAleredyExist:numver})
       }
       Enter  =  async () => {
+        console.log(data);
+
         let array = [];
         const web3 = new Web3(window.ethereum);
         await window.ethereum.enable();
         const contract_abi=require('./../generateL.json');
-        const contract_address="0x57204fcE36084A2257a72eD71beBC8D9d752c8e7";
+        const contract_address="0xBDc3FC5Cfa71E7D45637E719D5660Fbcfd2D2F86";
         const NameContract =new web3.eth.Contract(contract_abi, contract_address);
         const user=await web3.eth.getAccounts();
-        const numver=await NameContract.methods.enterToLoutry().send({from: user[0]},function(err, res){
+        const numver=await NameContract.methods.enterToLoutry(data.nft).send({from: user[0]},function(err, res){
         });
         this.setState({isAleredyExist:numver});
         
@@ -38,7 +136,7 @@ export class GenarateLouttry extends Component {
         const web3 = new Web3(window.ethereum);
         await window.ethereum.enable();
         const contract_abi=require('./../generateL.json');
-        const contract_address="0x57204fcE36084A2257a72eD71beBC8D9d752c8e7";
+        const contract_address="0xBDc3FC5Cfa71E7D45637E719D5660Fbcfd2D2F86";
         const NameContract =new web3.eth.Contract(contract_abi, contract_address);
         const user=await web3.eth.getAccounts();
         const numver=await NameContract.methods.getTicketByUser().call({from: user[0]},function(err, res){
@@ -71,6 +169,8 @@ render() {
             </div>):(   <div>
         <header>
                     <br></br><br></br>
+                    <Example />
+
                 <Card style={{ width: '25rem' }} className="m-auto">
                         <Card.Img variant="top" src="https://i.imgur.com/pe5Bf8B.png" />
                         <Card.Body>
