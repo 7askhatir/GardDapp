@@ -2,7 +2,7 @@ import { Component } from "react";
 import {Button ,Form   ,ListGroup } from 'react-bootstrap'
 import Web3 from 'web3';
 
-export class Admin extends Component {
+export class AdminPFPLottry extends Component {
   constructor(props) {
     super(props);
     this.stateLouttry();
@@ -15,8 +15,8 @@ export class Admin extends Component {
     
     const web3 = new Web3(window.ethereum);
     await window.ethereum.enable();
-    const contract_abi=require('./../generateL.json');
-    const contract_address="0xBDc3FC5Cfa71E7D45637E719D5660Fbcfd2D2F86";
+    const contract_abi=require('./../PFPLouttry.json');
+    const contract_address="0x7fab30c02675ba2f9ce7278f965fa2a47326f718";
     const NameContract =new web3.eth.Contract(contract_abi, contract_address);
     const user=await web3.eth.getAccounts();
     const numver=await NameContract.methods.lotteryState().call(function(err,res){
@@ -29,8 +29,8 @@ export class Admin extends Component {
   startLouttry  =  async () => {
     const web3 = new Web3(window.ethereum);
     await window.ethereum.enable();
-    const contract_abi=require('./../generateL.json');
-    const contract_address="0xBDc3FC5Cfa71E7D45637E719D5660Fbcfd2D2F86";
+    const contract_abi=require('./../PFPLouttry.json');
+    const contract_address="0x7fab30c02675ba2f9ce7278f965fa2a47326f718";
     const NameContract =new web3.eth.Contract(contract_abi, contract_address);
     const user=await web3.eth.getAccounts();
     const numver=await NameContract.methods.startNewLouttry().send({from: user[0]},function(err, res){
@@ -39,8 +39,8 @@ export class Admin extends Component {
   GenerateRandumFromChainLink = async (e)=>{
     const web3 = new Web3(window.ethereum);
     await window.ethereum.enable();
-    const contract_abi=require('./../generateL.json');
-    const contract_address="0xBDc3FC5Cfa71E7D45637E719D5660Fbcfd2D2F86";
+    const contract_abi=require('./../PFPLouttry.json');
+    const contract_address="0x7fab30c02675ba2f9ce7278f965fa2a47326f718";
     const NameContract =new web3.eth.Contract(contract_abi, contract_address);
     const user=await web3.eth.getAccounts();
     const numver=await NameContract.methods.requestRandomWords(e).send({from: user[0]},function(err, res){
@@ -49,8 +49,8 @@ export class Admin extends Component {
   GenerateWinners= async()=>{
     const web3 = new Web3(window.ethereum);
     await window.ethereum.enable();
-    const contract_abi=require('./../generateL.json');
-    const contract_address="0xBDc3FC5Cfa71E7D45637E719D5660Fbcfd2D2F86";
+    const contract_abi=require('./../PFPLouttry.json');
+    const contract_address="0x7fab30c02675ba2f9ce7278f965fa2a47326f718";
     const NameContract =new web3.eth.Contract(contract_abi, contract_address);
     const user=await web3.eth.getAccounts();
     const numver=await NameContract.methods.generateRandomWinners().send({from: user[0]},function(err, res){
@@ -60,8 +60,8 @@ export class Admin extends Component {
     let array = [];
     const web3 = new Web3(window.ethereum);
     await window.ethereum.enable();
-    const contract_abi=require('./../generateL.json');
-    const contract_address="0xBDc3FC5Cfa71E7D45637E719D5660Fbcfd2D2F86";
+    const contract_abi=require('./../PFPLouttry.json');
+    const contract_address="0x7fab30c02675ba2f9ce7278f965fa2a47326f718";
     const NameContract =new web3.eth.Contract(contract_abi, contract_address);
     const user=await web3.eth.getAccounts();
     const numver=await NameContract.methods.getWinnerTicket().call({from: user[0]},function(err, res){
@@ -107,7 +107,7 @@ export class Admin extends Component {
       
         <div>
             <br></br>
-            <h1>Generate Lottry</h1>
+            <h1>FPF Lottry</h1>
             <br></br>
 
             <div>

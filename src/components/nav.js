@@ -7,6 +7,9 @@ import { Admin } from "../hooks/AdminLouttry"
 import Web3 from 'web3';
 import { Home } from "../hooks/Home";
 import { GenarateLouttry } from "../hooks/GeneraleLouttry";
+import { PFPLouttry } from "../hooks/PFPLouttry";
+import { NFTLouttry } from "../hooks/NFTLouttry";
+import { AdminA } from "../hooks/Admin";
 
 
 export class NabBarCompanant extends Component {
@@ -64,7 +67,10 @@ export class NabBarCompanant extends Component {
                 <Nav.Link href="Nft">Mint NFT</Nav.Link>
                 <Nav.Link href="Lottery">Louttry</Nav.Link>
                 <Nav.Link href="Generate">Generate Louttry</Nav.Link>
+                <Nav.Link href="PFP">PFP Louttry</Nav.Link>
+                <Nav.Link href="NFTLottry">NFT Louttry</Nav.Link>
                 <Nav.Link href="Admin">Admin</Nav.Link>
+
                 </Nav>
             </Navbar.Collapse>
             <Navbar.Brand href="#home">GIT Balance : {this.state.balance/1000000000000000000}</Navbar.Brand>
@@ -76,7 +82,9 @@ export class NabBarCompanant extends Component {
                  <Route exact path='/Nft' element={< NFT />}></Route>
                  <Route exact path='/Lottery' element={< Lottery />}></Route>
                  <Route exact path='/Generate' element={< GenarateLouttry />}></Route>
-                 <Route exact path='/Admin' element={< Admin />}></Route>
+                 <Route exact path='/Admin' element={< AdminA />}></Route>
+                 <Route exact path='/PFP' element={< PFPLouttry />}></Route>
+                 <Route exact path='/NFTLottry' element={< NFTLouttry />}></Route>
           </Routes>
           </Router>
         </div>
