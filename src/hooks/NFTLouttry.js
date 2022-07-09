@@ -160,7 +160,7 @@ render() {
         <div>
         <div>
              <br></br>
-            <h1>Genarate Louttry</h1>
+            <h1>NFT Louttry</h1>
             <br></br>
             {this.state.isAleredyExist?(<div >
              <h3>Your ticket</h3>
