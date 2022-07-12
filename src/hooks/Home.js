@@ -82,13 +82,13 @@ export class Home extends Component {
        fromTokrnToType =(tokenId)=>{
          var type ="";
          if(tokenId%10==0) type="Simple";
-         else if(tokenId%10==1) type="Tier 1 PFP";
-         else if(tokenId%10==2) type="Tier 2 PFP";
-         else if(tokenId%10==3) type="Tier 3 PFP";
-         else if(tokenId%10==4) type="Tier 4 PFP";
-         else if(tokenId%10==5) type="Tier 5 PFP";
-         else if(tokenId%10==6) type="Tier 6 PFP";
-         else if(tokenId%10==7) type="Tier 7 PFP";
+         else if(tokenId%10==1) type="Tier 1 FPF";
+         else if(tokenId%10==2) type="Tier 2 FPF";
+         else if(tokenId%10==3) type="Tier 3 FPF";
+         else if(tokenId%10==4) type="Tier 4 FPF";
+         else if(tokenId%10==5) type="Tier 5 FPF";
+         else if(tokenId%10==6) type="Tier 6 FPF";
+         else if(tokenId%10==7) type="Tier 7 FPF";
 
 
          return type;

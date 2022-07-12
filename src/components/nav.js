@@ -68,7 +68,7 @@ export class NabBarCompanant extends Component {
                 <Nav.Link href="Lottery">Lottery</Nav.Link>
                 <Nav.Link href="Generate">General Lottery</Nav.Link>
                 <Nav.Link href="NFTLottry">NFT Lottery</Nav.Link>
-                <Nav.Link href="PFP">PFP Lottery</Nav.Link>
+                <Nav.Link href="FPF">FPF Lottery</Nav.Link>
                 <Nav.Link href="Admin">Admin</Nav.Link>
 
                 </Nav>
@@ -83,7 +83,7 @@ export class NabBarCompanant extends Component {
                  <Route exact path='/Lottery' element={< Lottery />}></Route>
                  <Route exact path='/Generate' element={< GenarateLouttry />}></Route>
                  <Route exact path='/Admin' element={< AdminA />}></Route>
-                 <Route exact path='/PFP' element={< PFPLouttry />}></Route>
+                 <Route exact path='/FPF' element={< PFPLouttry />}></Route>
                  <Route exact path='/NFTLottry' element={< NFTLouttry />}></Route>
           </Routes>
           </Router>
