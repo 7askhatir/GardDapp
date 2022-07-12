@@ -13,6 +13,7 @@ export  function Example() {
       
       
     }
+    
   const test = async () =>{
     const web3 = new Web3(window.ethereum);
     await window.ethereum.enable();
@@ -56,10 +57,23 @@ export  function Example() {
     cursor: 'pointer',
     padding: '1em',
   }
-  function Type(type){
-    if(type == 0) return "Simple";
-    else return "PFP "+(type-1);
+  const fromTokrnToType =(tokenId)=>{
+    var type ="";
+    if(tokenId%10==0) type="Simple";
+    else if(tokenId%10==1) type="Tier 1 PFP";
+    else if(tokenId%10==2) type="Tier 2 PFP";
+    else if(tokenId%10==3) type="Tier 3 PFP";
+    else if(tokenId%10==4) type="Tier 4 PFP";
+    else if(tokenId%10==5) type="Tier 5 PFP";
+    else if(tokenId%10==6) type="Tier 6 PFP";
+    else if(tokenId%10==7) type="Tier 7 PFP";
+
+
+    return type;
+
   }
+ 
+
     return (
       <>
                   <br></br>
@@ -89,7 +103,7 @@ export  function Example() {
               Number Of hearts : {array[index].hearts}
             </Card.Text>
             <Card.Text>
-              Type : {Type(array[index].Type)}
+              Type : {fromTokrnToType(array[index].Type)}
             </Card.Text>
             <Button variant="primary" onClick={() => {
              selectNft(array[index].id);
@@ -183,7 +197,7 @@ render() {
                 <Card style={{ width: '25rem' }} className="m-auto">
                         <Card.Img variant="top" src="https://i.imgur.com/pe5Bf8B.png" />
                         <Card.Body>
-                            <Card.Title>Enter to this Louttry</Card.Title>
+                            <Card.Title>Enter to this NFT Louttry</Card.Title>
                             <Button onClick={() => {
                   this.Enter();
                }}  variant="primary">Enter</Button>

@@ -174,7 +174,7 @@ render() {
                 <Card style={{ width: '25rem' }} className="m-auto">
                         <Card.Img variant="top" src="https://i.imgur.com/pe5Bf8B.png" />
                         <Card.Body>
-                            <Card.Title>Enter to this Louttry</Card.Title>
+                            <Card.Title>Enter to this General Louttry</Card.Title>
                             <Button onClick={() => {
                   this.Enter();
                }}  variant="primary">Enter</Button>
