@@ -107,7 +107,7 @@ export class Admin extends Component {
       
         <div>
             <br></br>
-            <h1>Generate Lottry</h1>
+            <h1>General Lottery</h1>
             <br></br>
 
             <div>

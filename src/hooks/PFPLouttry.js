@@ -160,7 +160,7 @@ render() {
         <div>
         <div>
              <br></br>
-            <h1>PFP Louttry</h1>
+            <h1>PFP Lottery</h1>
             <br></br>
             {this.state.isAleredyExist?(<div >
              <h3>Your ticket</h3>

@@ -59,21 +59,20 @@ export class NabBarCompanant extends Component {
             <Router>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
-            <Navbar.Brand href="#home">GardIno</Navbar.Brand>
+            <Navbar.Brand href="#home">Guard Inu</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
                 <Nav.Link href="/">Nfts <Badge bg="secondary">{this.state.numberOfNft}</Badge></Nav.Link>
                 <Nav.Link href="Nft">Mint NFT</Nav.Link>
-                <Nav.Link href="Lottery">Louttry</Nav.Link>
-                <Nav.Link href="Generate">Generate Louttry</Nav.Link>
-                <Nav.Link href="PFP">PFP Louttry</Nav.Link>
-                <Nav.Link href="NFTLottry">NFT Louttry</Nav.Link>
+                <Nav.Link href="Lottery">Lottery</Nav.Link>
+                <Nav.Link href="Generate">General Lottery</Nav.Link>
+                <Nav.Link href="NFTLottry">NFT Lottery</Nav.Link>
                 <Nav.Link href="Admin">Admin</Nav.Link>
 
                 </Nav>
             </Navbar.Collapse>
-            <Navbar.Brand href="#home">GIT Balance : {this.state.balance/1000000000000000000}</Navbar.Brand>
+            <Navbar.Brand href="#home">Guard Balance : {this.state.balance/1000000000000000000}</Navbar.Brand>
 
             </Container>
             </Navbar>

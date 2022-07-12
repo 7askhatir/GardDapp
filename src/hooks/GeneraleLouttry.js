@@ -151,7 +151,7 @@ render() {
         <div>
         <div>
              <br></br>
-            <h1>Genarate Louttry</h1>
+            <h1>Genarate Lottery</h1>
             <br></br>
             {this.state.isAleredyExist?(<div >
              <h3>Your ticket</h3>

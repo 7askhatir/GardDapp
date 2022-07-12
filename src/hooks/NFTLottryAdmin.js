@@ -74,7 +74,7 @@ export class AdminNFTLottry extends Component {
   var button;
   if (this.state.louttyState==1) {
     button = <div>
-      <Button onClick={() => this.startLouttry()}>Start New Louttry</Button>
+      <Button onClick={() => this.startLouttry()}>Start New Lottery</Button>
       <br></br><br></br><br></br>
       <h4>Last Winners</h4>
 
