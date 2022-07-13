@@ -107,7 +107,7 @@ export class AdminNFTLottry extends Component {
       
         <div>
             <br></br>
-            <h1>NFT Lottry</h1>
+            <h1>NFT Lottery</h1>
             <br></br>
 
             <div>
