@@ -68,7 +68,7 @@ export class NabBarCompanant extends Component {
                 <Nav.Link href="Lottery">Lottery</Nav.Link>
                 <Nav.Link href="Generate">General Lottery</Nav.Link>
                 <Nav.Link href="NFTLottry">NFT Lottery</Nav.Link>
-                <Nav.Link href="FPF">FPF Lottery</Nav.Link>
+                <Nav.Link href="FPF">PFP Lottery</Nav.Link>
                 <Nav.Link href="Admin">Admin</Nav.Link>
 
                 </Nav>

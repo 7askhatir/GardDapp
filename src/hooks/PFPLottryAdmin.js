@@ -107,7 +107,7 @@ export class AdminPFPLottry extends Component {
       
         <div>
             <br></br>
-            <h1>FPF Lottery</h1>
+            <h1>PFP Lottery</h1>
             <br></br>
 
             <div>
